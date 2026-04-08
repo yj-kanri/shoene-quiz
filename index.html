@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026年 省エネ住宅補助金 問題集</title>
+  <meta name="description" content="2026年の住宅省エネ補助金を学べるGitHub Pages向け問題集サイト" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">2026年 住宅省エネ2026キャンペーン 学習サイト</p>
+      <h1>省エネ住宅補助金 問題集</h1>
+      <p class="lead">新築、リフォーム、窓、給湯、賃貸集合給湯まで、実務で使いやすい形で確認できるように作成しています。</p>
+      <div class="notice">
+        <strong>注意</strong>
+        <span>本サイトは 2026年4月2日時点の公式情報をもとに作成しています。最終判断は必ず各公式サイト・最新公表資料で確認してください。</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <aside class="panel controls">
+      <h2>出題設定</h2>
+      <label>
+        カテゴリ
+        <select id="categorySelect"></select>
+      </label>
+      <label>
+        問題数
+        <select id="countSelect">
+          <option value="10">10問</option>
+          <option value="20">20問</option>
+          <option value="30">30問</option>
+          <option value="all">全問</option>
+        </select>
+      </label>
+      <label class="checkbox-row">
+        <input type="checkbox" id="shuffleToggle" checked />
+        ランダム出題
+      </label>
+      <div class="button-group">
+        <button id="startBtn" class="primary">スタート</button>
+        <button id="retryWrongBtn" class="secondary" disabled>間違えた問題だけ再挑戦</button>
+      </div>
+
+      <section class="mini-card">
+        <h3>このサイトで学べる範囲</h3>
+        <ul>
+          <li>住宅省エネ2026キャンペーン全体像</li>
+          <li>みらいエコ住宅2026事業 新築・リフォーム</li>
+          <li>先進的窓リノベ2026事業</li>
+          <li>給湯省エネ2026事業</li>
+          <li>賃貸集合給湯省エネ2026事業</li>
+          <li>申請・登録・還元の基本実務</li>
+        </ul>
+      </section>
+    </aside>
+
+    <section class="panel quiz-area">
+      <div class="topbar">
+        <div>
+          <p id="statusText">スタートを押すと問題が始まります。</p>
+          <div class="progress-wrap">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+        <div class="score-box">
+          <span>正解数</span>
+          <strong id="scoreText">0</strong>
+        </div>
+      </div>
+
+      <article id="questionCard" class="question-card empty-state">
+        <h2>準備OK</h2>
+        <p>左の設定を選んで、問題を開始してください。</p>
+      </article>
+
+      <div id="navButtons" class="nav-buttons hidden">
+        <button id="nextBtn" class="primary" disabled>次へ</button>
+      </div>
+
+      <section id="resultCard" class="result-card hidden"></section>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>GitHub Pages でそのまま公開できる静的サイトです。</p>
+  </footer>
+
+  <script src="data/questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
